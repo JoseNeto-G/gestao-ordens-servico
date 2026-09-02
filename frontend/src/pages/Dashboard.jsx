@@ -10,7 +10,7 @@ const STATUS_LABELS = {
   cancelada: 'Cancelada'
 }
 
-export default function Dashboard({ user, onLogout }) {
+export default function Dashboard() {
   const [orders, setOrders] = useState([])
   const [clients, setClients] = useState([])
   const [loading, setLoading] = useState(true)
@@ -72,14 +72,6 @@ export default function Dashboard({ user, onLogout }) {
 
   return (
     <div className="dashboard">
-      <header className="dashboard-header">
-        <h1>Gestao de Ordens de Servico</h1>
-        <div className="user-info">
-          <span>Ola, {user?.name}</span>
-          <button onClick={onLogout}>Sair</button>
-        </div>
-      </header>
-
       {error && <p className="error">{error}</p>}
 
       <section className="cards">
